@@ -1,0 +1,31 @@
+<div class="wrapper">
+    <nav class="navbar">
+        <img class="logo" src="/assets/images/23.jpg">
+        <ul>
+            <li><a (click)="navigateToHomepage()">Home</a></li>
+            <li><a (click)="navigateToAboutpage()">About</a></li>
+
+            <li><a href="https://www.krishimaratavahini.kar.nic.in/Markets/minimumsupportprice.aspx">Market View</a>
+            </li>
+
+            <li><a (click)="navigateToGrade()">Grade Calculate</a></li>
+            <!-- <li><a (click)="navigateTohelppage()">Help</a></li> -->
+
+            <li><a (click)="navigateToHome()">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="center">
+        <div *ngIf="navigationId===1">
+            <h1> GRADE BASED E-MARKETING PORTAL FOR AGRICULTURAL COMMODITIES</h1>
+        </div>
+        <div *ngIf="navigationId===2">
+            <app-about></app-about>
+        </div>
+        <div *ngIf="navigationId===3">
+            <app-market-view></app-market-view>
+        </div>
+        <div *ngIf="navigationId===4">
+            <app-grade></app-grade>
+        </div>
+    </div>
+</div>

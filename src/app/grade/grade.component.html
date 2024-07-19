@@ -1,0 +1,26 @@
+<div class="center">
+    <!-- <label for="myFileField">Select a image: </label> -->
+    <input #imgInput type="file" demo-file-model="myFile" class="form-control" id="myFileField"
+        (change)="fileInputChange($event)" accept=".jpg">
+
+</div>
+<form>
+    <div class="center" *ngIf="base64SImage">
+        <img src="data:image/jpg;base64,{{base64SImage}}" />
+    </div>
+    <div class="center"  *ngIf="base64SImage">
+        <button class="button" type="submit" id="submit" (click)="calculateGrade()">GradeCalculation</button>
+    </div>
+    <div class="center"  *ngIf="isGradeCalculating">
+        <mat-spinner [diameter]="30" mode="indeterminate" ></mat-spinner>
+    </div>
+    <div class="center" *ngIf="grade !== -1">
+        <h1>
+            Grade of Uploaded Image is
+            {{grade}} and Price is {{price | currency:"&#8377;"}}
+        </h1>
+    </div>
+    <!-- <div class="center">
+        <button (click)="goBack()">Back to home</button>
+    </div> -->
+</form>

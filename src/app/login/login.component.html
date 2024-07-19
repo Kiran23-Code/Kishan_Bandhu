@@ -1,0 +1,75 @@
+<body>
+   <div class="wrapper">
+      <img class="logo" src="/assets/images/23.jpg" />
+      <!-- <div class="title-text">
+           <div class="title login">
+             Login to Kisan Bandhu
+          </div>
+          <div class="title signup">
+             Signup Form
+          </div>
+       </div> -->
+      <div class="form-container">
+         <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked (click)="slideClicked(1)">
+            <input type="radio" name="slide" id="signup" (click)="slideClicked(2)">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+         </div>
+         <div class="form-inner">
+            <form action="#" class="login" *ngIf="sliderId===1">
+               <div class="field">
+                  <input type="text" placeholder="Email Address" [(ngModel)]="username"
+                     [ngModelOptions]="{standalone: true}" required>
+               </div>
+               <div class="field">
+                  <input type="password" placeholder="Password" [(ngModel)]="password"
+                     [ngModelOptions]="{standalone: true}" required>
+               </div>
+               <div class="pass-link">
+                  <a (click)="onForgetPwd()">Forgot password?</a>
+               </div>
+               <div class="field btn" (click)="login()">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Login">
+               </div>
+               <div class="signup-link">
+                  Not a member? <a (click)="slideClicked(2)">Signup now</a>
+               </div>
+            </form>
+            <form action="#" class="signup" *ngIf="sliderId===2">
+               <div class="field">
+                  <input type="text" [(ngModel)]="email" placeholder="Email Address"
+                     [ngModelOptions]="{standalone: true}" required>
+               </div>
+               <div class="field">
+                  <input type="text" [(ngModel)]="first_name" placeholder="First Name"
+                     [ngModelOptions]="{standalone: true}" required>
+               </div>
+               <div class="field">
+                  <input type="text" [(ngModel)]="last_name" placeholder="Last Name"
+                     [ngModelOptions]="{standalone: true}" required>
+               </div>
+               <div class="field">
+                  <input type="number" [(ngModel)]="phone_number" placeholder="Phone Number"
+                     [ngModelOptions]="{standalone: true}" required>
+               </div>
+
+               <div class="field">
+                  <input type="password" [(ngModel)]="password_signup" placeholder="Password"
+                     [ngModelOptions]="{standalone: true}" required>
+               </div>
+               <div class="field">
+                  <input type="password" [(ngModel)]="confirm_password" placeholder="Confirm password"
+                     [ngModelOptions]="{standalone: true}" required>
+               </div>
+               <div class="field btn" (click)="signup()">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Signup">
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</body>
